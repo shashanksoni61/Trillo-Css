@@ -1,0 +1,82 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-gray-light-1: #faf9f9;
+  --color-gray-light-2: #f4f2f2;
+  --color-gray-light-3: #f0eeee;
+  --color-gray-light-4: #ccc;
+
+  --color-gray-dark-1: #333;
+  --color-gray-dark-2: #777;
+  --color-gray-dark-3: #999;
+
+  --line: 1px solid var(--color-gray-light-2);
+  --shadow-dark: 0 2rem 8rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+}
+//////////
+
+// bp = breakpoint
+$bp-largest: 75em; //1200px/16 = 75em
+$bp-large: 68.75em; //1100px/16 = 68.75em 1em = 16px
+$bp-medium: 56.25em; // 900px/16
+$bp-small: 37.5em; //600px/16
+$bp-smallest: 31.25em; //500px/16
+
+//////////
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+html {
+  // be default 1em = 16px so if we want 1em = 10px for html then 10/16 = 62.5
+  box-sizing: border-box;
+  font-size: 62.5%; // so now 1rem = 10px bcuz 10px/16px = 62.5%
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+}
+body {
+  background-color: #eb2f64;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-gray-dark-2);
+  background-image: linear-gradient(
+    to right botton,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media only screen and (max-width: $bp-large) {
+    overflow: hidden;
+    overflow: scroll;
+  }
+}
